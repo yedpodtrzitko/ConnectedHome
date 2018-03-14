@@ -24,6 +24,8 @@ public class TargetIndicator : MonoBehaviour
 
     public bool m_showOffScreen;
 
+
+
     void Start ()
     {
         mainCamera = Camera.main;
@@ -31,25 +33,11 @@ public class TargetIndicator : MonoBehaviour
         InstainateTargetIcon();
 	}
 	
+
+
 	void Update ()
     {
-        Vector3 directionFromCamera = transform.position - mainCamera.transform.position;
-
-        Vector3 cameraForwad = mainCamera.transform.forward;
-        Vector3 cameraRight = mainCamera.transform.right;
-        Vector3 cameraUp = mainCamera.transform.up;
-        
-        cameraForwad *= Vector3.Dot(cameraForwad, directionFromCamera);
-        cameraRight *= Vector3.Dot(cameraRight, directionFromCamera);
-        cameraUp *= Vector3.Dot(cameraUp, directionFromCamera);
-
-        Debug.DrawRay(mainCamera.transform.position, directionFromCamera, Color.magenta);
-
-        Vector3 forwardPlaneCenter = mainCamera.transform.position + cameraForwad;
-
-        Debug.DrawLine(mainCamera.transform.position, forwardPlaneCenter, Color.blue);
-        Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraUp, Color.green);
-        Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraRight, Color.red);
+        DrawDebugLines();
 
         UpdateTargetIconPosition();
     }
@@ -67,6 +55,7 @@ public class TargetIndicator : MonoBehaviour
         m_iconImage = m_icon.gameObject.AddComponent<Image>();
         m_iconImage.sprite = m_targetIconOnScreen;
     }
+
 
 
     private void UpdateTargetIconPosition()
@@ -91,5 +80,30 @@ public class TargetIndicator : MonoBehaviour
         newPos.y = Mathf.Clamp(newPos.y, m_edgeBuffer, Screen.height - m_edgeBuffer);
 
         m_icon.transform.position = newPos;
+    }
+
+
+
+
+
+    public void DrawDebugLines()
+    {
+        Vector3 directionFromCamera = transform.position - mainCamera.transform.position;
+
+        Vector3 cameraForwad = mainCamera.transform.forward;
+        Vector3 cameraRight = mainCamera.transform.right;
+        Vector3 cameraUp = mainCamera.transform.up;
+
+        cameraForwad *= Vector3.Dot(cameraForwad, directionFromCamera);
+        cameraRight *= Vector3.Dot(cameraRight, directionFromCamera);
+        cameraUp *= Vector3.Dot(cameraUp, directionFromCamera);
+
+        Debug.DrawRay(mainCamera.transform.position, directionFromCamera, Color.magenta);
+
+        Vector3 forwardPlaneCenter = mainCamera.transform.position + cameraForwad;
+
+        Debug.DrawLine(mainCamera.transform.position, forwardPlaneCenter, Color.blue);
+        Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraUp, Color.green);
+        Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraRight, Color.red);
     }
 }
