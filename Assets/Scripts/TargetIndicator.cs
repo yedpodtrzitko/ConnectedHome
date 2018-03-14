@@ -21,15 +21,20 @@ public class TargetIndicator : MonoBehaviour
     [Range(0, 100)]
     public float m_edgeBuffer;
     public Vector3 m_targetIconScale;
+    
 
-    public bool m_showOffScreen;
+    [Space]
+    public bool ShowDebugLines;
 
 
 
     void Start ()
     {
         mainCamera = Camera.main;
+
         mainCanvas = FindObjectOfType<Canvas>();
+        Debug.Assert((mainCanvas == null), "There needs to be a Canvas object in the scene for the OTI to display");
+
         InstainateTargetIcon();
 	}
 	
@@ -37,7 +42,8 @@ public class TargetIndicator : MonoBehaviour
 
 	void Update ()
     {
-        DrawDebugLines();
+        if(ShowDebugLines)
+            DrawDebugLines();
 
         UpdateTargetIconPosition();
     }
@@ -69,12 +75,11 @@ public class TargetIndicator : MonoBehaviour
             newPos.x = 1f - newPos.x;
             newPos.y = 1f - newPos.y;
             newPos.z = 0;
+
+            newPos = Vector3Maxamize(newPos);
         }
-        print(newPos);
 
         newPos = mainCamera.ViewportToScreenPoint(newPos);
-        print(newPos);
-
 
         newPos.x = Mathf.Clamp(newPos.x, m_edgeBuffer, Screen.width - m_edgeBuffer);
         newPos.y = Mathf.Clamp(newPos.y, m_edgeBuffer, Screen.height - m_edgeBuffer);
@@ -105,5 +110,22 @@ public class TargetIndicator : MonoBehaviour
         Debug.DrawLine(mainCamera.transform.position, forwardPlaneCenter, Color.blue);
         Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraUp, Color.green);
         Debug.DrawLine(forwardPlaneCenter, forwardPlaneCenter + cameraRight, Color.red);
+    }
+
+
+
+    public Vector3 Vector3Maxamize(Vector3 vector)
+    {
+        Vector3 returnVector = vector;
+
+        float max = 0;
+
+        max = vector.x > max ? vector.x : max;
+        max = vector.y > max ? vector.y : max;
+        max = vector.z > max ? vector.z : max;
+
+        returnVector /= max;
+
+        return returnVector;
     }
 }
