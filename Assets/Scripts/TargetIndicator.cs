@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
@@ -14,16 +12,17 @@ public class TargetIndicator : MonoBehaviour
     private Vector3 m_cameraOffsetRight;
     private Vector3 m_cameraOffsetForward;
 
-
     public Sprite m_targetIconOnScreen;
     public Sprite m_targetIconOffScreen;
+
+    [Space]
 
     [Range(0, 100)]
     public float m_edgeBuffer;
     public Vector3 m_targetIconScale;
     
-
     [Space]
+
     public bool ShowDebugLines;
 
 
@@ -33,7 +32,7 @@ public class TargetIndicator : MonoBehaviour
         mainCamera = Camera.main;
 
         mainCanvas = FindObjectOfType<Canvas>();
-        Debug.Assert((mainCanvas == null), "There needs to be a Canvas object in the scene for the OTI to display");
+        Debug.Assert((mainCanvas != null), "There needs to be a Canvas object in the scene for the OTI to display");
 
         InstainateTargetIcon();
 	}
