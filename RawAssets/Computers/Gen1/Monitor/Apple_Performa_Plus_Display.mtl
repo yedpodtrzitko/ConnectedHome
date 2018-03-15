@@ -1,0 +1,136 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 6.5 x64 6.5.0.9182
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl led
+Ka 0 0.392157 0.184314
+Kd 0 0.392157 0.184314
+Ks 0.9 0.9 0.9
+illum 2
+Ns 64
+d 0.51
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl display_patch
+Ka 0.0392157 0.0392157 0.0392157
+Kd 0.0392157 0.0392157 0.0392157
+Ks 0.9 0.9 0.9
+illum 2
+Ns 64
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl no_emptiness
+Ka 0.00392157 0.00392157 0.00392157
+Kd 0.00392157 0.00392157 0.00392157
+Ks 0.9 0.9 0.9
+illum 2
+Ns 64
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl plastic_white
+Ka 0.639216 0.639216 0.517647
+Kd 1 1 1
+Ks 0.9 0.9 0.9
+illum 2
+Ns 73.5167
+map_Kd front_icons_diffuse.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl chrome
+Ka 0.121569 0.121569 0.121569
+Kd 0.121569 0.121569 0.121569
+Ks 0.9 0.9 0.9
+illum 2
+Ns 512
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl display
+Ka 0.00392157 0.00392157 0.00392157
+Kd 0.00392157 0.00392157 0.00392157
+Ks 0.9 0.9 0.9
+illum 2
+Ns 2048
+d 0.06
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl labels
+Ka 0.803922 0.803922 0.74902
+Kd 1 1 1
+Ks 0.9 0.9 0.9
+illum 2
+Ns 2048
+map_Kd labels_diffuse.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl plastic_black
+Ka 0.0117647 0.0117647 0.0117647
+Kd 0.0117647 0.0117647 0.0117647
+Ks 0.9 0.9 0.9
+illum 2
+Ns 362.039
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 

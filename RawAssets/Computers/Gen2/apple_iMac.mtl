@@ -1,0 +1,91 @@
+# File produced by AccuTrans 3D
+
+newmtl apple_iMac_cd_drive
+  Ns 1.0
+  d 0.9
+  illum 2
+  Kd 0.6871 0.6871 0.6871
+  Ka 0 0 0
+  Ks 0.6012 0.6012 0.6012
+
+newmtl apple_iMac_exterior_blue
+  Ns 1.0
+  d 0.75
+  illum 2
+  Kd 0.1286 0.3827 0.4486
+  Ka 0 0 0
+  Ks 0.1608 0.4784 0.5608
+
+newmtl apple_iMac_exterior_gray
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.6871 0.6871 0.6871
+  Ka 0 0 0
+  Ks 0.6012 0.6012 0.6012
+  map_Kd C:\Users\DAVID\Documents\3d\models\elrctronics\apple_iMac\imac.jpg
+
+newmtl apple_iMac_frame
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.3922 0.3922 0.3922
+  Ka 0 0 0
+  Ks 0.3137 0.3137 0.3137
+
+newmtl apple_iMac_handle
+  Ns 1.0
+  d 0.9
+  illum 2
+  Kd 0.6871 0.6871 0.6871
+  Ka 0 0 0
+  Ks 0.6012 0.6012 0.6012
+
+newmtl apple_iMac_headphone_jacks
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0 0 0
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl apple_iMac_keys
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.2471 0.2471 0.2471
+  Ka 0 0 0
+  Ks 0.1235 0.1235 0.1235
+  map_Kd C:\Users\DAVID\Documents\3d\models\elrctronics\apple_iMac\imac.jpg
+
+newmtl apple_iMac_screen1
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0.3702 0.4204 0.3482
+  Ka 0 0 0
+  Ks 0.4627 0.5255 0.4353
+
+newmtl apple_iMac_screen2
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 0 0 0
+  Ka 0 0 0
+  Ks 0 0 0
+
+newmtl apple_iMac_speakers
+  Ns 1.0
+  d 0.75
+  illum 2
+  Kd 0.1286 0.3827 0.4486
+  Ka 0 0 0
+  Ks 0.1608 0.4784 0.5608
+
+newmtl apple_iMac_usb_ports
+  Ns 1.0
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 0 0 0
+  Ks 1.0 1.0 1.0
