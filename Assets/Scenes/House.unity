@@ -259,6 +259,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1763898370
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4d6cd8f0a55a92e47b20e94cfe1827b8, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1001 &1909234992
 Prefab:
   m_ObjectHideFlags: 0
@@ -268,7 +310,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 22d618a0bb062de44883efdc94b01462, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 22d618a0bb062de44883efdc94b01462, type: 3}
       propertyPath: m_LocalPosition.y
