@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: NeonBlue
+  m_Name: Matrix
   m_Shader: {fileID: 4800000, guid: 2575b04754556244199c556fc9ee3d33, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
