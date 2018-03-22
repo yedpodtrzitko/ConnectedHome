@@ -6,6 +6,11 @@ public class VideoTextureManager : MonoBehaviour
 {
     public void PlayVideoTexture()
     {
-        ((MovieTexture)GetComponent<Renderer>().material.mainTexture).Play();
+        GetComponent<UnityEngine.Video.VideoPlayer>().Play();
+    }
+
+    public void Update()
+    {
+        GetComponent<RaySelectionVolume>().isActing = GetComponent<UnityEngine.Video.VideoPlayer>().isPlaying;
     }
 }

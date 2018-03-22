@@ -44,8 +44,12 @@ public class RadialLoad : MonoBehaviour
 
     IEnumerator LoadCircle(GameObject selection)    // Load coroutine
     {
+        RaySelectionVolume selectionVolume = selection.GetComponent<RaySelectionVolume>();
         bool startLoad = false;
         float timer = 0;
+
+        if(selectionVolume.isActing) yield break;
+
         while (timer <= timeToPlay && isLoading)
         {
             progressCircle.fillAmount = timer / timeToPlay;
@@ -62,7 +66,7 @@ public class RadialLoad : MonoBehaviour
 
         if (isLoading)
         {
-            selection.GetComponent<RaySelectionVolume>().loadedAction.Invoke();
+            selectionVolume.loadedAction.Invoke();
         }
 
         progressCircle.fillAmount = 0;   // Reset
