@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 512
+  m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 3
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -70,7 +70,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 0
     m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
@@ -1718,6 +1718,10 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: fbb8d58a325de904d98b96945a9aabc7, type: 3}
+--- !u!4 &1204262577 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 419732, guid: e0cbebfd6e0c1af4f81058d854e37572, type: 2}
+  m_PrefabInternal: {fileID: 1204262574}
 --- !u!114 &1204262578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,7 +1736,19 @@ MonoBehaviour:
   isActing: 0
   loadedAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114154363526053218, guid: dff6867e69f66664198e2e17144fb492,
+          type: 2}
+        m_MethodName: TeleportPlayerToTransform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1204262577}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1237560087 stripped
@@ -1792,7 +1808,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1067822310144616, guid: dff6867e69f66664198e2e17144fb492, type: 2}
+      propertyPath: m_Name
+      value: Blindfold
+      objectReference: {fileID: 0}
+    - target: {fileID: 114769883382917954, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154363526053218, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: fadeTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154363526053218, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: blindfold
+      value: 
+      objectReference: {fileID: 1984363148}
+    - target: {fileID: 114795602295012228, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114769883382917954, guid: dff6867e69f66664198e2e17144fb492, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dff6867e69f66664198e2e17144fb492, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1342759394 stripped
@@ -2577,6 +2618,38 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 29b9e292696dbb4448bf8964be891c47, type: 3}
+--- !u!1 &1984363146 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1067822310144616, guid: dff6867e69f66664198e2e17144fb492,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342558957}
+--- !u!114 &1984363148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984363146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1 &2034002496
 GameObject:
   m_ObjectHideFlags: 0
