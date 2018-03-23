@@ -8,37 +8,27 @@ public class ForceTeleport : MonoBehaviour
     public float fadeTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
+    private Valve.VR.InteractionSystem.Player playerRef;
 
     private void Start()
     {
-        originalPos = Valve.VR.InteractionSystem.Player.instance.transform.position;
-        originalRot = Valve.VR.InteractionSystem.Player.instance.transform.rotation;
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Valve.VR.InteractionSystem.Player.instance.transform.position = originalPos;
-            Valve.VR.InteractionSystem.Player.instance.transform.rotation = originalRot;
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TeleportPlayerToTransform(transform);
-        }
+        playerRef = Valve.VR.InteractionSystem.Player.instance;
+        originalPos = playerRef.transform.position;
+        originalRot = playerRef.transform.rotation;
     }
 
     public void TeleportPlayerToTransform(Transform pos)
     {
-        Valve.VR.InteractionSystem.Player.instance.gameObject.SetActive(true);
-
         StartCoroutine(FadeInOut());
 
-        Valve.VR.InteractionSystem.Player.instance.transform.position = pos.position;
-        Valve.VR.InteractionSystem.Player.instance.transform.rotation = pos.rotation;
 
-        StartCoroutine(TimeToTeleportBack());
+        playerRef.transform.position = pos.position;
+        playerRef.transform.rotation = pos.rotation;
+    }
+
+    public void ResetToOriginalPosIn(float time)
+    {
+        StartCoroutine(TimeToTeleportBack(time));
     }
 
     public IEnumerator FadeInOut()
@@ -59,11 +49,11 @@ public class ForceTeleport : MonoBehaviour
         blindfold.color = c;
     }
 
-    public IEnumerator TimeToTeleportBack()
+    public IEnumerator TimeToTeleportBack(float time)
     {
-        yield return new WaitForSeconds(10f);
-
-        Valve.VR.InteractionSystem.Player.instance.transform.position = originalPos;
-        Valve.VR.InteractionSystem.Player.instance.transform.rotation = originalRot;
+        yield return new WaitForSeconds(time);
+        StartCoroutine(FadeInOut());
+        playerRef.transform.position = originalPos;
+        playerRef.transform.rotation = originalRot;
     }
 }
