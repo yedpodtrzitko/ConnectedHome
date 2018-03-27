@@ -58,9 +58,14 @@ public class RandomPrefabFloatBy : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- Update
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], transform.position + (Vector3.one * Random.Range(-1f, 1f)), Quaternion.identity) as GameObject;
+            Vector3 spawnPos = Random.onUnitSphere;
+            spawnPos.z = 0;
+            spawnPos = spawnPos.normalized * 3f;
+            spawnPos += transform.position;
+
+            GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
             StartCoroutine(DriftBy(go));
         }
 	}
@@ -68,8 +73,12 @@ public class RandomPrefabFloatBy : MonoBehaviour
     public IEnumerator DriftBy(GameObject go)
     {
         float timer = 0;
+
         float speed = m_maxSpeed * m_speedModifier;
-        float rightLeft = Random.Range(-1f, 1f);
+
+        float rightLeft = Random.Range(1f, 2f);
+        rightLeft *= Time.frameCount % 2 == 0 ? 1f : -1f;
+
         bool drifting = true;
 
         while(drifting)
@@ -84,22 +93,31 @@ public class RandomPrefabFloatBy : MonoBehaviour
             else
             {
                 drifting = Vector3.Distance(go.transform.position, m_target.transform.position) < m_distanceToTarget * 2f;
-
-                print(Vector3.Distance(go.transform.position, m_target.transform.position));
-                print(m_distanceToTarget * 2f);
             }
 
             // This is the end position of the random prefab, behind the target
-            Vector3 newPos = m_target.position + (m_directionToTarget * m_distanceToTarget * 1.1f);
-            newPos = Vector3.Lerp(transform.position, newPos, timer * speed);
-            newPos += ((rightLeft * m_target.transform.right) * (1f / Vector3.Distance(newPos, m_target.transform.position)));
+            Vector3 velocity = (m_directionToTarget * speed * Time.deltaTime);
 
-            go.transform.position = newPos;
+            go.transform.Translate(velocity);
 
-            print(drifting);
             yield return null;
         }
 
         Destroy(go);
+    }
+
+    public Vector3 Vector3Maxamize(Vector3 vector)
+    {
+        Vector3 returnVector = vector;
+
+        float max = 0;
+
+        max = vector.x > max ? vector.x : max;
+        max = vector.y > max ? vector.y : max;
+        max = vector.z > max ? vector.z : max;
+
+        returnVector /= max;
+
+        return returnVector;
     }
 }
