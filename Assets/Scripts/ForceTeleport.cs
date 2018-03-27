@@ -21,7 +21,6 @@ public class ForceTeleport : MonoBehaviour
     {
         StartCoroutine(FadeInOut());
 
-
         playerRef.transform.position = pos.position;
         playerRef.transform.rotation = pos.rotation;
     }
