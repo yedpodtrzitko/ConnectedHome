@@ -12,7 +12,7 @@ public class RandomPrefabFloatBy : MonoBehaviour
     [Space]
 
     public Transform m_target;
-    public bool m_orientToTargetX, m_orientToTargetY, m_orientToTargetZ;
+    public float driftRadius;
 
     [Space]
 
@@ -58,17 +58,14 @@ public class RandomPrefabFloatBy : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- Update
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Vector3 spawnPos = Random.onUnitSphere;
-            spawnPos.z = 0;
-            spawnPos = spawnPos.normalized * 3f;
-            spawnPos += transform.position;
+        Vector3 spawnPos = transform.position;
+        float randomNumber = Random.Range(0, 90);
+        spawnPos += transform.right * Mathf.Sin(randomNumber) * driftRadius;
+        spawnPos += transform.up * Mathf.Cos(randomNumber) * driftRadius;
 
-            GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
-            StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
-            StartCoroutine(DriftBy(go));
-        }
+        GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
+        StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
+        StartCoroutine(DriftBy(go));
 	}
 
     public IEnumerator DriftBy(GameObject go)
@@ -76,9 +73,6 @@ public class RandomPrefabFloatBy : MonoBehaviour
         float timer = 0;
 
         float speed = m_maxSpeed * m_speedModifier;
-
-        float rightLeft = Random.Range(1f, 2f);
-        rightLeft *= Time.frameCount % 2 == 0 ? 1f : -1f;
 
         bool drifting = true;
 
@@ -95,10 +89,8 @@ public class RandomPrefabFloatBy : MonoBehaviour
             {
                 drifting = Vector3.Distance(go.transform.position, m_target.transform.position) < m_distanceToTarget * 2f;
             }
-
-            // This is the end position of the random prefab, behind the target
+            
             Vector3 velocity = (m_directionToTarget * speed * Time.deltaTime);
-
             go.transform.Translate(velocity);
 
             yield return null;
