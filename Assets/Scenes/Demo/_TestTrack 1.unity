@@ -3779,6 +3779,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4034439088045072, guid: dff6867e69f66664198e2e17144fb492, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114795602295012228, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4766,6 +4771,60 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0ad4c8e4a679b1a46960e6093c3a1d28, type: 3}
   m_PrefabInternal: {fileID: 1051816340}
+--- !u!1 &1059137900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1059137901}
+  - component: {fileID: 1059137902}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059137901
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059137900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1891272859}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1059137902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059137900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb526828f601b843bdc2cfad05c5649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_randomPrefabs:
+  - {fileID: 1136379078314060, guid: 3762adcce52dece438f0fe3bb1fce535, type: 2}
+  m_spawnRate: 0
+  m_target: {fileID: 1891272859}
+  m_orientToTargetX: 0
+  m_orientToTargetY: 0
+  m_orientToTargetZ: 0
+  m_growIn: 0
+  m_fadeIn: 0
+  m_growOut: 0
+  m_fadeOut: 0
+  m_speedModifier: 1
+  m_maxSpeed: 1
+  m_lifeTime: 0
 --- !u!1001 &1079783441
 Prefab:
   m_ObjectHideFlags: 0
