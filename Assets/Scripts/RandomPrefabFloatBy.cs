@@ -58,7 +58,7 @@ public class RandomPrefabFloatBy : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- Update
     void Update ()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Vector3 spawnPos = Random.onUnitSphere;
             spawnPos.z = 0;
@@ -66,6 +66,7 @@ public class RandomPrefabFloatBy : MonoBehaviour
             spawnPos += transform.position;
 
             GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
+            StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
             StartCoroutine(DriftBy(go));
         }
 	}
@@ -103,8 +104,27 @@ public class RandomPrefabFloatBy : MonoBehaviour
             yield return null;
         }
 
+        StartCoroutine(SmoothScale(go, go.transform.localScale, Vector3.zero));
+        yield return new WaitUntil(() => go.transform.localScale == Vector3.zero);
+
         Destroy(go);
     }
+
+
+    public IEnumerator SmoothScale(GameObject go, Vector3 begScale, Vector3 endScale)
+    {
+        go.transform.localScale = begScale;
+        float timer = 0f;
+
+        while (go.transform.localScale != endScale && go != null)
+        {
+            timer += Time.deltaTime;
+
+            go.transform.localScale = Vector3.Lerp(go.transform.localScale, endScale, timer);
+            yield return null;
+        }
+    }
+
 
     public Vector3 Vector3Maxamize(Vector3 vector)
     {
