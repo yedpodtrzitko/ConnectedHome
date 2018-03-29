@@ -12,7 +12,7 @@ public class RandomPrefabFloatBy : MonoBehaviour
     [Space]
 
     public Transform m_target;
-    public bool m_orientToTargetX, m_orientToTargetY, m_orientToTargetZ;
+    public float driftRadius;
 
     [Space]
 
@@ -44,6 +44,10 @@ public class RandomPrefabFloatBy : MonoBehaviour
         get { return Vector3.Distance(transform.position, m_target.position); }
     }
 
+
+
+    private float timer = 0f;
+
     #endregion
 
 
@@ -58,16 +62,24 @@ public class RandomPrefabFloatBy : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- Update
     void Update ()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
+        if (timer >= 1f / m_spawnRate && m_spawnRate != 0)
         {
-            Vector3 spawnPos = Random.onUnitSphere;
-            spawnPos.z = 0;
-            spawnPos = spawnPos.normalized * 3f;
-            spawnPos += transform.position;
+            Vector3 spawnPos = transform.position;
+            float randomNumber = Random.Range(0, 90);
+            spawnPos += transform.right * Mathf.Sin(randomNumber) * driftRadius;
+            spawnPos += transform.up * Mathf.Cos(randomNumber) * driftRadius;
 
             GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
+            StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
             StartCoroutine(DriftBy(go));
+
+            timer = 0;
         }
+        else
+        {
+            timer += Time.deltaTime;
+        }
+
 	}
 
     public IEnumerator DriftBy(GameObject go)
@@ -75,9 +87,6 @@ public class RandomPrefabFloatBy : MonoBehaviour
         float timer = 0;
 
         float speed = m_maxSpeed * m_speedModifier;
-
-        float rightLeft = Random.Range(1f, 2f);
-        rightLeft *= Time.frameCount % 2 == 0 ? 1f : -1f;
 
         bool drifting = true;
 
@@ -94,17 +103,34 @@ public class RandomPrefabFloatBy : MonoBehaviour
             {
                 drifting = Vector3.Distance(go.transform.position, m_target.transform.position) < m_distanceToTarget * 2f;
             }
-
-            // This is the end position of the random prefab, behind the target
+            
             Vector3 velocity = (m_directionToTarget * speed * Time.deltaTime);
-
             go.transform.Translate(velocity);
 
             yield return null;
         }
 
+        StartCoroutine(SmoothScale(go, go.transform.localScale, Vector3.zero));
+        yield return new WaitUntil(() => go.transform.localScale == Vector3.zero);
+
         Destroy(go);
     }
+
+
+    public IEnumerator SmoothScale(GameObject go, Vector3 begScale, Vector3 endScale)
+    {
+        go.transform.localScale = begScale;
+        float timer = 0f;
+
+        while (go.transform.localScale != endScale && go != null)
+        {
+            timer += Time.deltaTime;
+
+            go.transform.localScale = Vector3.Lerp(go.transform.localScale, endScale, timer);
+            yield return null;
+        }
+    }
+
 
     public Vector3 Vector3Maxamize(Vector3 vector)
     {
