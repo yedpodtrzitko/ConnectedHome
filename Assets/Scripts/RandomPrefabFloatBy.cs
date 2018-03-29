@@ -44,6 +44,10 @@ public class RandomPrefabFloatBy : MonoBehaviour
         get { return Vector3.Distance(transform.position, m_target.position); }
     }
 
+
+
+    private float timer = 0f;
+
     #endregion
 
 
@@ -58,14 +62,24 @@ public class RandomPrefabFloatBy : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- Update
     void Update ()
     {
-        Vector3 spawnPos = transform.position;
-        float randomNumber = Random.Range(0, 90);
-        spawnPos += transform.right * Mathf.Sin(randomNumber) * driftRadius;
-        spawnPos += transform.up * Mathf.Cos(randomNumber) * driftRadius;
+        if (timer >= 1f / m_spawnRate && m_spawnRate != 0)
+        {
+            Vector3 spawnPos = transform.position;
+            float randomNumber = Random.Range(0, 90);
+            spawnPos += transform.right * Mathf.Sin(randomNumber) * driftRadius;
+            spawnPos += transform.up * Mathf.Cos(randomNumber) * driftRadius;
 
-        GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
-        StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
-        StartCoroutine(DriftBy(go));
+            GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
+            StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
+            StartCoroutine(DriftBy(go));
+
+            timer = 0;
+        }
+        else
+        {
+            timer += Time.deltaTime;
+        }
+
 	}
 
     public IEnumerator DriftBy(GameObject go)
