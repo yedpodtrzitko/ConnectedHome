@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4750858440180774}
-  m_Layer: 0
-  m_Name: Magazine
+  m_Layer: 5
+  m_Name: Magazine(DialUp)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 23760868741595618}
   - component: {fileID: 114323449109607560}
   - component: {fileID: 114269459469442264}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
