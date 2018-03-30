@@ -7,5 +7,6 @@ public class myFloatEvent : UnityEvent<float> { }
 
 public class RaySelectionVolume : MonoBehaviour
 {
-     public UnityEvent loadedAction;
+    public bool isActing = false;
+    public UnityEvent loadedAction;
 }
