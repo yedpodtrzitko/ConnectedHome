@@ -15,4 +15,9 @@ public class FireAnimationTrigger : MonoBehaviour
     {
         m_animator.SetTrigger(triggerName);
     }
+
+    public void DisableGameobject(GameObject go)
+    {
+        go.SetActive(false);
+    }
 }
