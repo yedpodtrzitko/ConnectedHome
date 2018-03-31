@@ -70,6 +70,7 @@ public class RandomPrefabFloatBy : MonoBehaviour
             spawnPos += transform.up * Mathf.Cos(randomNumber) * driftRadius;
 
             GameObject go = Instantiate(m_randomPrefabs[Random.Range(0, m_randomPrefabs.Count)], spawnPos, Quaternion.identity) as GameObject;
+            go.transform.parent = transform;
             StartCoroutine(SmoothScale(go, Vector3.zero, go.transform.localScale));
             StartCoroutine(DriftBy(go));
 
