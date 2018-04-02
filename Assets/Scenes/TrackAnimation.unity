@@ -15513,7 +15513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: minutes
-      value: 47
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: hour
@@ -18015,7 +18015,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d50cc230c341074994f76337d1af082, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d50cc230c341074994f76337d1af082, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18047,7 +18047,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d50cc230c341074994f76337d1af082, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d50cc230c341074994f76337d1af082, type: 3}
       propertyPath: m_LocalScale.z
@@ -28242,7 +28242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1375376599}
   - component: {fileID: 1375376600}
-  - component: {fileID: 1375376601}
   m_Layer: 0
   m_Name: Player_Root
   m_TagString: Untagged
@@ -28285,17 +28284,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &1375376601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1375376598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511f2dfb20ef32a4f87b1d90a79fd3c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1383876510 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1156068415206246, guid: 29d646d905d7bfa4080ba771c8d1216d,
@@ -30657,7 +30645,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: minutes
-      value: 47
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 595cf544943e29a4d9a7b813e4218a3c, type: 2}
       propertyPath: hour
@@ -31177,6 +31165,11 @@ Prefab:
         type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114154363526053218, guid: dff6867e69f66664198e2e17144fb492,
+        type: 2}
+      propertyPath: fadeTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dff6867e69f66664198e2e17144fb492, type: 2}

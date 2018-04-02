@@ -15,9 +15,11 @@ public class Clock : MonoBehaviour {
     //-- set start time 00:00
     public int minutes = 0;
     public int hour = 0;
-    
+
     //-- time speed factor
     public float clockSpeed = 1.0f;     // 1.0f = realtime, < 1.0f = slower, > 1.0f = faster
+
+    public bool realTime;
 
     //-- internal vars
     int seconds;
@@ -36,6 +38,13 @@ void Start()
 
     msecs = 0.0f;
     seconds = 0;
+
+    if(realTime)
+        {
+            hour = System.DateTime.Now.Hour;
+            minutes = System.DateTime.Now.Minute;
+            seconds = System.DateTime.Now.Second;
+        }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
