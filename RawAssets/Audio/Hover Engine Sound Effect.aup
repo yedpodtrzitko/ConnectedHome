@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Hover Engine Sound Effect_data" version="1.3.0" audacityversion="2.1.2" sel0="11.9504375873" sel1="11.9504375873" vpos="0" h="0.0000000000" zoom="11.2652778625" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf56.40.101"/>
+		<tag name="TITLE" value="Jet engine noise"/>
+		<tag name="ARTIST" value="Sound Effect"/>
+	</tags>
+	<wavetrack name="Hover Engine Sound Effect" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2175368">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000fd8.au" len="189616" min="-0.76927" max="0.733832" rms="0.137969"/>
+				</waveblock>
+				<waveblock start="189616">
+					<simpleblockfile filename="e000091e.au" len="262144" min="-0.9612" max="0.755816" rms="0.182283"/>
+				</waveblock>
+				<waveblock start="451760">
+					<simpleblockfile filename="e00003e9.au" len="262144" min="-0.878687" max="0.812219" rms="0.183149"/>
+				</waveblock>
+				<waveblock start="713904">
+					<simpleblockfile filename="e00006c5.au" len="262144" min="-0.924519" max="0.779966" rms="0.187765"/>
+				</waveblock>
+				<waveblock start="976048">
+					<simpleblockfile filename="e0000e03.au" len="262144" min="-0.840496" max="0.70397" rms="0.181727"/>
+				</waveblock>
+				<waveblock start="1238192">
+					<simpleblockfile filename="e00004d8.au" len="262144" min="-0.823119" max="0.751639" rms="0.185247"/>
+				</waveblock>
+				<waveblock start="1500336">
+					<simpleblockfile filename="e0000d1f.au" len="262144" min="-0.899661" max="0.743648" rms="0.184149"/>
+				</waveblock>
+				<waveblock start="1762480">
+					<simpleblockfile filename="e0000477.au" len="262144" min="-0.791898" max="0.777118" rms="0.147993"/>
+				</waveblock>
+				<waveblock start="2024624">
+					<simpleblockfile filename="e0000feb.au" len="150744" min="-0.080936" max="0.109434" rms="0.010418"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine Sound Effect" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2175368">
+				<waveblock start="0">
+					<simpleblockfile filename="e00006fa.au" len="189616" min="-0.771658" max="0.745984" rms="0.13881"/>
+				</waveblock>
+				<waveblock start="189616">
+					<simpleblockfile filename="e0000a2a.au" len="262144" min="-1.0" max="0.79802" rms="0.185247"/>
+				</waveblock>
+				<waveblock start="451760">
+					<simpleblockfile filename="e00006bc.au" len="262144" min="-0.908699" max="0.794325" rms="0.18251"/>
+				</waveblock>
+				<waveblock start="713904">
+					<simpleblockfile filename="e0000031.au" len="262144" min="-0.941597" max="0.76694" rms="0.189722"/>
+				</waveblock>
+				<waveblock start="976048">
+					<simpleblockfile filename="e0000c64.au" len="262144" min="-0.797576" max="0.752337" rms="0.181715"/>
+				</waveblock>
+				<waveblock start="1238192">
+					<simpleblockfile filename="e0000011.au" len="262144" min="-0.806867" max="0.748301" rms="0.185592"/>
+				</waveblock>
+				<waveblock start="1500336">
+					<simpleblockfile filename="e00001e1.au" len="262144" min="-0.867099" max="0.709507" rms="0.184461"/>
+				</waveblock>
+				<waveblock start="1762480">
+					<simpleblockfile filename="e00002a2.au" len="262144" min="-0.800623" max="0.701613" rms="0.148164"/>
+				</waveblock>
+				<waveblock start="2024624">
+					<simpleblockfile filename="e000008d.au" len="150744" min="-0.080934" max="0.109434" rms="0.010418"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine Begin" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="176400">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000228.au" len="176400" min="-0.76927" max="0.733832" rms="0.127094"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine Begin" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="176400">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000e14.au" len="176400" min="-0.771658" max="0.729695" rms="0.127479"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine End" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="323165">
+				<waveblock start="0">
+					<simpleblockfile filename="e00002a6.au" len="172424" min="-0.586362" max="0.581125" rms="0.099265"/>
+				</waveblock>
+				<waveblock start="172424">
+					<simpleblockfile filename="e0000ea5.au" len="150741" min="-0.080936" max="0.109434" rms="0.010418"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine End" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="323165">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000a27.au" len="172424" min="-0.590818" max="0.589571" rms="0.098968"/>
+				</waveblock>
+				<waveblock start="172424">
+					<simpleblockfile filename="e00006b8.au" len="150741" min="-0.080934" max="0.109434" rms="0.010418"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine Sound Effect" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1675800">
+				<waveblock start="0">
+					<simpleblockfile filename="e000097d.au" len="13216" min="-0.705657" max="0.611162" rms="0.093908"/>
+				</waveblock>
+				<waveblock start="13216">
+					<simpleblockfile filename="e000091e.au" len="262144" min="-0.9612" max="0.755816" rms="0.182283"/>
+				</waveblock>
+				<waveblock start="275360">
+					<simpleblockfile filename="e00003e9.au" len="262144" min="-0.878687" max="0.812219" rms="0.183149"/>
+				</waveblock>
+				<waveblock start="537504">
+					<simpleblockfile filename="e00006c5.au" len="262144" min="-0.924519" max="0.779966" rms="0.187765"/>
+				</waveblock>
+				<waveblock start="799648">
+					<simpleblockfile filename="e0000e03.au" len="262144" min="-0.840496" max="0.70397" rms="0.181727"/>
+				</waveblock>
+				<waveblock start="1061792">
+					<simpleblockfile filename="e00004d8.au" len="262144" min="-0.823119" max="0.751639" rms="0.185247"/>
+				</waveblock>
+				<waveblock start="1323936">
+					<simpleblockfile filename="e0000d1f.au" len="262144" min="-0.899661" max="0.743648" rms="0.184149"/>
+				</waveblock>
+				<waveblock start="1586080">
+					<simpleblockfile filename="e0000179.au" len="89720" min="-0.791898" max="0.777118" rms="0.17046"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Hover Engine Sound Effect" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1675800">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000e23.au" len="13216" min="-0.685993" max="0.745984" rms="0.095986"/>
+				</waveblock>
+				<waveblock start="13216">
+					<simpleblockfile filename="e0000a2a.au" len="262144" min="-1.0" max="0.79802" rms="0.185247"/>
+				</waveblock>
+				<waveblock start="275360">
+					<simpleblockfile filename="e00006bc.au" len="262144" min="-0.908699" max="0.794325" rms="0.18251"/>
+				</waveblock>
+				<waveblock start="537504">
+					<simpleblockfile filename="e0000031.au" len="262144" min="-0.941597" max="0.76694" rms="0.189722"/>
+				</waveblock>
+				<waveblock start="799648">
+					<simpleblockfile filename="e0000c64.au" len="262144" min="-0.797576" max="0.752337" rms="0.181715"/>
+				</waveblock>
+				<waveblock start="1061792">
+					<simpleblockfile filename="e0000011.au" len="262144" min="-0.806867" max="0.748301" rms="0.185592"/>
+				</waveblock>
+				<waveblock start="1323936">
+					<simpleblockfile filename="e00001e1.au" len="262144" min="-0.867099" max="0.709507" rms="0.184461"/>
+				</waveblock>
+				<waveblock start="1586080">
+					<simpleblockfile filename="e000058f.au" len="89720" min="-0.800623" max="0.701613" rms="0.17102"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

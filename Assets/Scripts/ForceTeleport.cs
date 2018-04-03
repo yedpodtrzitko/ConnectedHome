@@ -8,28 +8,47 @@ public class ForceTeleport : MonoBehaviour
     public float fadeTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
-    private Valve.VR.InteractionSystem.Player playerRef;
+    public GameObject objectRef;
 
+
+
+    // ---------- ---------- ---------- ---------- ---------- 
     private void Start()
     {
-        playerRef = Valve.VR.InteractionSystem.Player.instance;
-        originalPos = playerRef.transform.position;
-        originalRot = playerRef.transform.rotation;
+        if (objectRef == null) { objectRef = gameObject; }
+
+        originalPos = objectRef.transform.position;
+        originalRot = objectRef.transform.rotation;
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void TeleportPlayerToTransform(Transform pos)
     {
         StartCoroutine(FadeInOut());
 
-        playerRef.transform.position = pos.position;
-        playerRef.transform.rotation = pos.rotation;
+        objectRef.transform.position = pos.position;
+        objectRef.transform.rotation = pos.rotation;
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void ResetToOriginalPosIn(float time)
     {
         StartCoroutine(TimeToTeleportBack(time));
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
+    public void SetOriginalValuesTo(Transform newValues)
+    {
+        originalPos = newValues.position;
+        originalRot = newValues.rotation;
+    }
+
+
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
         Color c = blindfold.color;
@@ -37,22 +56,27 @@ public class ForceTeleport : MonoBehaviour
         c.a = 1f;
         blindfold.color = c;
 
-        while (blindfold.color.a > 0.01f)
+        if (blindfold != null)
         {
-            c.a -= (Time.deltaTime / fadeTime);
-            blindfold.color = c;
-            yield return null;
-        }
+            while (blindfold.color.a > 0.01f)
+            {
+                c.a -= (Time.deltaTime / fadeTime);
+                blindfold.color = c;
+                yield return null;
+            }
 
-        c.a = 0f;
-        blindfold.color = c;
+            c.a = 0f;
+            blindfold.color = c;
+        }
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator TimeToTeleportBack(float time)
     {
         yield return new WaitForSeconds(time);
         StartCoroutine(FadeInOut());
-        playerRef.transform.position = originalPos;
-        playerRef.transform.rotation = originalRot;
+        objectRef.transform.position = originalPos;
+        objectRef.transform.rotation = originalRot;
     }
 }
