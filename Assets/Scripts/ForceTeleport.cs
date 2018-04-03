@@ -8,16 +8,17 @@ public class ForceTeleport : MonoBehaviour
     public float fadeTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
-    private Valve.VR.InteractionSystem.Player playerRef;
+    public GameObject objectRef;
 
 
 
     // ---------- ---------- ---------- ---------- ---------- 
     private void Start()
     {
-        playerRef = Valve.VR.InteractionSystem.Player.instance;
-        originalPos = playerRef.transform.position;
-        originalRot = playerRef.transform.rotation;
+        if (objectRef == null) { objectRef = gameObject; }
+
+        originalPos = objectRef.transform.position;
+        originalRot = objectRef.transform.rotation;
     }
 
 
@@ -26,8 +27,8 @@ public class ForceTeleport : MonoBehaviour
     {
         StartCoroutine(FadeInOut());
 
-        playerRef.transform.position = pos.position;
-        playerRef.transform.rotation = pos.rotation;
+        objectRef.transform.position = pos.position;
+        objectRef.transform.rotation = pos.rotation;
     }
 
 
@@ -75,7 +76,7 @@ public class ForceTeleport : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         StartCoroutine(FadeInOut());
-        playerRef.transform.position = originalPos;
-        playerRef.transform.rotation = originalRot;
+        objectRef.transform.position = originalPos;
+        objectRef.transform.rotation = originalRot;
     }
 }
