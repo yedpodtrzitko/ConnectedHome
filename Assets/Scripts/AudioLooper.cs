@@ -29,6 +29,15 @@ public class AudioLooper : MonoBehaviour
         m_bufferSource.Pause();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SwapAudioSources();
+            m_audioSource.Play();
+        }
+    }
+
 
     private void InitializeAudioSources()
     {
@@ -50,5 +59,12 @@ public class AudioLooper : MonoBehaviour
 
         m_audioSource.clip = m_begTrack;
         m_bufferSource.clip = m_midTrack;
+    }
+
+    private void SwapAudioSources()
+    {
+        AudioSource t = m_audioSource;
+        m_audioSource = m_bufferSource;
+        m_bufferSource = t;
     }
 }

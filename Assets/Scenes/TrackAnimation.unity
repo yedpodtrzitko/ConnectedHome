@@ -25914,6 +25914,23 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 92675e5dfaa7c8e46956f0f46f6aecba, type: 2}
   m_PrefabInternal: {fileID: 181970025}
+--- !u!114 &1146105095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146105094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b1ac22633423f49ad8a6d58b366502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioSource: {fileID: 1146105097}
+  m_playOnAwake: 1
+  m_loop: 0
+  m_begTrack: {fileID: 8300000, guid: 252173f68fd614942b5bc8efb09554fb, type: 3}
+  m_midTrack: {fileID: 8300000, guid: 475d8243d8ea251428347b9ad39db535, type: 3}
+  m_endTrack: {fileID: 8300000, guid: e544db84183e6f741a0493f9e270ae23, type: 3}
 --- !u!82 &1146105097
 AudioSource:
   m_ObjectHideFlags: 0
