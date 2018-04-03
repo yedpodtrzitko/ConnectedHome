@@ -33,8 +33,7 @@ public class AudioLooper : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            SwapAudioSources();
-            m_audioSource.Play();
+            FadeSwapAudioSource();
         }
     }
 
@@ -66,5 +65,33 @@ public class AudioLooper : MonoBehaviour
         AudioSource t = m_audioSource;
         m_audioSource = m_bufferSource;
         m_bufferSource = t;
+    }
+
+    private void FadeSwapAudioSource()
+    {
+        StartCoroutine(_FadeSwapAudioSource(10f));
+    }
+
+    public IEnumerator _FadeSwapAudioSource(float fadeTime)
+    {
+        float _fadeTime = fadeTime;
+
+        m_bufferSource.volume = 0f;
+        m_bufferSource.Play();
+        
+        while(m_bufferSource.volume < 1f)
+        {
+            m_bufferSource.volume += Time.deltaTime / fadeTime;
+            m_audioSource.volume = 1f - m_bufferSource.volume;
+
+            fadeTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        m_bufferSource.volume = 1f;
+        m_audioSource.volume = 0f;
+
+        SwapAudioSources();
+        m_bufferSource.Stop();
     }
 }
