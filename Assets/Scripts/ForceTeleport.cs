@@ -10,6 +10,9 @@ public class ForceTeleport : MonoBehaviour
     private Quaternion originalRot;
     private Valve.VR.InteractionSystem.Player playerRef;
 
+
+
+    // ---------- ---------- ---------- ---------- ---------- 
     private void Start()
     {
         playerRef = Valve.VR.InteractionSystem.Player.instance;
@@ -17,6 +20,8 @@ public class ForceTeleport : MonoBehaviour
         originalRot = playerRef.transform.rotation;
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void TeleportPlayerToTransform(Transform pos)
     {
         StartCoroutine(FadeInOut());
@@ -25,11 +30,24 @@ public class ForceTeleport : MonoBehaviour
         playerRef.transform.rotation = pos.rotation;
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void ResetToOriginalPosIn(float time)
     {
         StartCoroutine(TimeToTeleportBack(time));
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
+    public void SetOriginalValuesTo(Transform newValues)
+    {
+        originalPos = newValues.position;
+        originalRot = newValues.rotation;
+    }
+
+
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
         Color c = blindfold.color;
@@ -37,17 +55,22 @@ public class ForceTeleport : MonoBehaviour
         c.a = 1f;
         blindfold.color = c;
 
-        while (blindfold.color.a > 0.01f)
+        if (blindfold != null)
         {
-            c.a -= (Time.deltaTime / fadeTime);
-            blindfold.color = c;
-            yield return null;
-        }
+            while (blindfold.color.a > 0.01f)
+            {
+                c.a -= (Time.deltaTime / fadeTime);
+                blindfold.color = c;
+                yield return null;
+            }
 
-        c.a = 0f;
-        blindfold.color = c;
+            c.a = 0f;
+            blindfold.color = c;
+        }
     }
 
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator TimeToTeleportBack(float time)
     {
         yield return new WaitForSeconds(time);
