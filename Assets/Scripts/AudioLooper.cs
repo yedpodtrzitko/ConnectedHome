@@ -28,16 +28,7 @@ public class AudioLooper : MonoBehaviour
         m_bufferSource.Pause();
         StartCoroutine(_AudioBegToMid(1f));
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            FadeSwapAudioSource(1f);
-        }
-    }
-
-
+    
     private void InitializeAudioSources()
     {
         if(m_audioSource == null)
@@ -75,7 +66,7 @@ public class AudioLooper : MonoBehaviour
         m_bufferSource = t;
     }
 
-    private void FadeSwapAudioSource(float fadeTime)
+    public void FadeSwapAudioSource(float fadeTime)
     {
         StartCoroutine(_FadeSwapAudioSource(fadeTime));
     }
