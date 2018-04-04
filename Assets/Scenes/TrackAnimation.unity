@@ -25927,7 +25927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audioSource: {fileID: 1146105097}
   m_playOnAwake: 1
-  m_loop: 0
+  m_loop: 1
   m_begTrack: {fileID: 8300000, guid: 252173f68fd614942b5bc8efb09554fb, type: 3}
   m_midTrack: {fileID: 8300000, guid: 475d8243d8ea251428347b9ad39db535, type: 3}
   m_endTrack: {fileID: 8300000, guid: e544db84183e6f741a0493f9e270ae23, type: 3}
