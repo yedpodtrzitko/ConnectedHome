@@ -40,6 +40,13 @@ public class ForceTeleport : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ---------- 
+    public void SetOriginalValuesToCurrent()
+    {
+        originalPos = objectRef.transform.position;
+        originalRot = objectRef.transform.rotation;
+    }
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void SetOriginalValuesTo(Transform newValues)
     {
         originalPos = newValues.position;
