@@ -20,7 +20,7 @@ public class AudioLooper : MonoBehaviour
 
 
 
-    private void Start()
+    private void OnEnable()
     {
         InitializeAudioSources();
         if (m_playOnAwake) m_audioSource.Play();
@@ -29,12 +29,13 @@ public class AudioLooper : MonoBehaviour
         StartCoroutine(_AudioBegToMid(1f));
     }
     
-    private void InitializeAudioSources()
+    public void InitializeAudioSources()
     {
         if(m_audioSource == null)
             m_audioSource = gameObject.AddComponent<AudioSource>();
 
-        m_bufferSource = m_audioSource.gameObject.AddComponent<AudioSource>();
+        if(m_bufferSource == null)
+            m_bufferSource = m_audioSource.gameObject.AddComponent<AudioSource>();
 
         m_audioSource.loop = false;
         m_bufferSource.loop = m_loop;
