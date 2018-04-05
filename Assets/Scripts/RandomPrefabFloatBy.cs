@@ -123,8 +123,10 @@ public class RandomPrefabFloatBy : MonoBehaviour
         go.transform.localScale = begScale;
         float timer = 0f;
 
-        while (go.transform.localScale != endScale && go != null)
+        while (go != null)
         {
+            if (go.transform.localScale == endScale) yield break;
+
             timer += Time.deltaTime;
 
             go.transform.localScale = Vector3.Lerp(go.transform.localScale, endScale, timer);
