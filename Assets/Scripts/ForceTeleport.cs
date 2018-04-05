@@ -17,8 +17,8 @@ public class ForceTeleport : MonoBehaviour
     {
         if (objectRef == null) { objectRef = gameObject; }
 
-        originalPos = objectRef.transform.position;
-        originalRot = objectRef.transform.rotation;
+        originalPos = objectRef.transform.localPosition;
+        originalRot = objectRef.transform.localRotation;
     }
 
 
@@ -40,10 +40,17 @@ public class ForceTeleport : MonoBehaviour
 
 
     // ---------- ---------- ---------- ---------- ---------- 
+    public void SetOriginalValuesToCurrent()
+    {
+        originalPos = objectRef.transform.localPosition;
+        originalRot = objectRef.transform.localRotation;
+    }
+
+    // ---------- ---------- ---------- ---------- ---------- 
     public void SetOriginalValuesTo(Transform newValues)
     {
-        originalPos = newValues.position;
-        originalRot = newValues.rotation;
+        originalPos = newValues.localPosition;
+        originalRot = newValues.localRotation;
     }
 
 
@@ -51,13 +58,14 @@ public class ForceTeleport : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
-        Color c = blindfold.color;
-        print(blindfold.color);
-        c.a = 1f;
-        blindfold.color = c;
 
         if (blindfold != null)
         {
+            Color c = blindfold.color;
+            print(blindfold.color);
+            c.a = 1f;
+            blindfold.color = c;
+            
             while (blindfold.color.a > 0.01f)
             {
                 c.a -= (Time.deltaTime / fadeTime);
@@ -76,7 +84,7 @@ public class ForceTeleport : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         StartCoroutine(FadeInOut());
-        objectRef.transform.position = originalPos;
-        objectRef.transform.rotation = originalRot;
+        objectRef.transform.localPosition = originalPos;
+        objectRef.transform.localRotation = originalRot;
     }
 }
