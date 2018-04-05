@@ -23,21 +23,12 @@ public class AudioLooper : MonoBehaviour
     private void Start()
     {
         InitializeAudioSources();
-
         if (m_playOnAwake) m_audioSource.Play();
 
         m_bufferSource.Pause();
+        StartCoroutine(_AudioBegToMid(1f));
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            FadeSwapAudioSource();
-        }
-    }
-
-
+    
     private void InitializeAudioSources()
     {
         if(m_audioSource == null)
@@ -45,6 +36,8 @@ public class AudioLooper : MonoBehaviour
 
         m_bufferSource = m_audioSource.gameObject.AddComponent<AudioSource>();
 
+        m_audioSource.loop = false;
+        m_bufferSource.loop = m_loop;
 
         m_bufferSource.playOnAwake  = m_audioSource.playOnAwake = false;
         m_bufferSource.panStereo    = m_audioSource.panStereo;
@@ -60,6 +53,12 @@ public class AudioLooper : MonoBehaviour
         m_bufferSource.clip = m_midTrack;
     }
 
+    private void PrepEndAudioTrack()
+    {
+        m_bufferSource.clip = m_endTrack;
+        m_bufferSource.Pause();
+    }
+
     private void SwapAudioSources()
     {
         AudioSource t = m_audioSource;
@@ -67,9 +66,9 @@ public class AudioLooper : MonoBehaviour
         m_bufferSource = t;
     }
 
-    private void FadeSwapAudioSource()
+    public void FadeSwapAudioSource(float fadeTime)
     {
-        StartCoroutine(_FadeSwapAudioSource(10f));
+        StartCoroutine(_FadeSwapAudioSource(fadeTime));
     }
 
     public IEnumerator _FadeSwapAudioSource(float fadeTime)
@@ -93,5 +92,13 @@ public class AudioLooper : MonoBehaviour
 
         SwapAudioSources();
         m_bufferSource.Stop();
+    }
+
+    public IEnumerator _AudioBegToMid(float fadeTime)
+    {
+        yield return new WaitUntil(() => m_audioSource.clip.length - m_audioSource.time <= 1f);
+        FadeSwapAudioSource(fadeTime);
+        yield return new WaitForSeconds(fadeTime * 1.1f);
+        PrepEndAudioTrack();
     }
 }
