@@ -43,18 +43,12 @@ public class EventManager : MonoBehaviour
         m_CurrentEvent = m_Events[0];   // Sets the current event to the first event
         onNotify = TriggerNextEvent;
 
-        sub.Subscribe("trigger", onNotify);
+        sub.Subscribe("trigger" + gameObject.GetInstanceID().ToString(), onNotify);
 
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TriggerNextEvent();
-        }
-
-
         if (m_CurrentEvent.nextEventDelay < 0)          // If the current delay time is less than 0
         {                                                   //
             return;                                         // break out of the update loop

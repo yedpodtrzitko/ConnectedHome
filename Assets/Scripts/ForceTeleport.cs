@@ -17,8 +17,8 @@ public class ForceTeleport : MonoBehaviour
     {
         if (objectRef == null) { objectRef = gameObject; }
 
-        originalPos = objectRef.transform.position;
-        originalRot = objectRef.transform.rotation;
+        originalPos = objectRef.transform.localPosition;
+        originalRot = objectRef.transform.localRotation;
     }
 
 
@@ -42,15 +42,15 @@ public class ForceTeleport : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- 
     public void SetOriginalValuesToCurrent()
     {
-        originalPos = objectRef.transform.position;
-        originalRot = objectRef.transform.rotation;
+        originalPos = objectRef.transform.localPosition;
+        originalRot = objectRef.transform.localRotation;
     }
 
     // ---------- ---------- ---------- ---------- ---------- 
     public void SetOriginalValuesTo(Transform newValues)
     {
-        originalPos = newValues.position;
-        originalRot = newValues.rotation;
+        originalPos = newValues.localPosition;
+        originalRot = newValues.localRotation;
     }
 
 
@@ -83,7 +83,7 @@ public class ForceTeleport : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         StartCoroutine(FadeInOut());
-        objectRef.transform.position = originalPos;
-        objectRef.transform.rotation = originalRot;
+        objectRef.transform.localPosition = originalPos;
+        objectRef.transform.localRotation = originalRot;
     }
 }
