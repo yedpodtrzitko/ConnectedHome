@@ -58,13 +58,14 @@ public class ForceTeleport : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
-        Color c = blindfold.color;
-        print(blindfold.color);
-        c.a = 1f;
-        blindfold.color = c;
 
         if (blindfold != null)
         {
+            Color c = blindfold.color;
+            print(blindfold.color);
+            c.a = 1f;
+            blindfold.color = c;
+            
             while (blindfold.color.a > 0.01f)
             {
                 c.a -= (Time.deltaTime / fadeTime);
