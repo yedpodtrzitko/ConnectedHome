@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 5f311ff1a68e4894ca5316d0bfb6a690
+timeCreated: 1522640734
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: mesh_clock_case
+    100004: mesh_dial_01
+    100006: mesh_dial_02
+    100008: mesh_gear_01
+    100010: mesh_gear_010
+    100012: mesh_gear_011
+    100014: mesh_gear_012
+    100016: mesh_gear_02
+    100018: mesh_gear_03
+    100020: mesh_gear_04
+    100022: mesh_gear_05
+    100024: mesh_gear_06
+    100026: mesh_gear_07
+    100028: mesh_gear_08
+    100030: mesh_gear_09
+    100032: mesh_plate_01
+    100034: mesh_plate_02
+    400000: //RootNode
+    400002: mesh_clock_case
+    400004: mesh_dial_01
+    400006: mesh_dial_02
+    400008: mesh_gear_01
+    400010: mesh_gear_010
+    400012: mesh_gear_011
+    400014: mesh_gear_012
+    400016: mesh_gear_02
+    400018: mesh_gear_03
+    400020: mesh_gear_04
+    400022: mesh_gear_05
+    400024: mesh_gear_06
+    400026: mesh_gear_07
+    400028: mesh_gear_08
+    400030: mesh_gear_09
+    400032: mesh_plate_01
+    400034: mesh_plate_02
+    2100000: blinn1
+    2300000: mesh_clock_case
+    2300002: mesh_dial_01
+    2300004: mesh_dial_02
+    2300006: mesh_gear_01
+    2300008: mesh_gear_010
+    2300010: mesh_gear_011
+    2300012: mesh_gear_012
+    2300014: mesh_gear_02
+    2300016: mesh_gear_03
+    2300018: mesh_gear_04
+    2300020: mesh_gear_05
+    2300022: mesh_gear_06
+    2300024: mesh_gear_07
+    2300026: mesh_gear_08
+    2300028: mesh_gear_09
+    2300030: mesh_plate_01
+    2300032: mesh_plate_02
+    3300000: mesh_clock_case
+    3300002: mesh_dial_01
+    3300004: mesh_dial_02
+    3300006: mesh_gear_01
+    3300008: mesh_gear_010
+    3300010: mesh_gear_011
+    3300012: mesh_gear_012
+    3300014: mesh_gear_02
+    3300016: mesh_gear_03
+    3300018: mesh_gear_04
+    3300020: mesh_gear_05
+    3300022: mesh_gear_06
+    3300024: mesh_gear_07
+    3300026: mesh_gear_08
+    3300028: mesh_gear_09
+    3300030: mesh_plate_01
+    3300032: mesh_plate_02
+    4300000: mesh_clock_case
+    4300002: mesh_gear_09
+    4300004: mesh_gear_010
+    4300006: mesh_gear_08
+    4300008: mesh_gear_011
+    4300010: mesh_gear_06
+    4300012: mesh_gear_012
+    4300014: mesh_gear_05
+    4300016: mesh_gear_07
+    4300018: mesh_gear_04
+    4300020: mesh_gear_01
+    4300022: mesh_gear_02
+    4300024: mesh_gear_03
+    4300026: mesh_plate_01
+    4300028: mesh_dial_01
+    4300030: mesh_plate_02
+    4300032: mesh_dial_02
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
