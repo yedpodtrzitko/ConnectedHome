@@ -38,13 +38,18 @@ public class EventManager : MonoBehaviour
     private Mouledoux.Components.Mediator.Subscriptions sub = new Mouledoux.Components.Mediator.Subscriptions();
     private Mouledoux.Callback.Callback onNotify;
 
-    void Awake()
+    void OnEnable()
     {
         m_CurrentEvent = m_Events[0];   // Sets the current event to the first event
         onNotify = TriggerNextEvent;
 
         sub.Subscribe("trigger" + gameObject.GetInstanceID().ToString(), onNotify);
 
+    }
+
+    private void OnDisable()
+    {
+        sub.UnsubscribeAll();
     }
 
     void Update()
