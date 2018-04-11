@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 39cace2863926444a9a78daa8ae26413, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -39,12 +39,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1302.0918, g: 7.6888e-41, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.6014587, g: 0.4528486, b: 0.34052888, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -90,8 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000392, guid: 35f67b67961884d4c879efa45f8d7eeb,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
@@ -2201,7 +2200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_randomPrefabs:
   - {fileID: 1549568778400936, guid: d62660e49e96f264c8543904df232b01, type: 2}
-  m_spawnRate: 10
+  m_spawnRate: 5
   m_target: {fileID: 1375376599}
   driftRadius: 2
   m_growIn: 0
@@ -2217,7 +2216,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51878062}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faa2b9f072408384ab83267125e47895, type: 3}
   m_Name: 
@@ -11549,7 +11548,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4010904463003576, guid: ad6b3e8f7feb3544cbef5c450742360c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771143856810002, guid: ad6b3e8f7feb3544cbef5c450742360c, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad6b3e8f7feb3544cbef5c450742360c, type: 2}
@@ -31671,7 +31674,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 880907898}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faa2b9f072408384ab83267125e47895, type: 3}
   m_Name: 
@@ -45858,7 +45861,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 378574020}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!23 &1338334430
 MeshRenderer:
@@ -57578,7 +57581,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643085681}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faa2b9f072408384ab83267125e47895, type: 3}
   m_Name: 
@@ -57596,7 +57599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_randomPrefabs:
   - {fileID: 1549568778400936, guid: 7294e6779ca816041a269ee277f47f26, type: 2}
-  m_spawnRate: 20
+  m_spawnRate: 15
   m_target: {fileID: 1375376599}
   driftRadius: 2
   m_growIn: 0
@@ -59670,7 +59673,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
