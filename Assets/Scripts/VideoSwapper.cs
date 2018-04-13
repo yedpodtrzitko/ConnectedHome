@@ -17,11 +17,34 @@ public class VideoSwapper : MonoBehaviour
         m_videoPlayer.clip = m_defaultClip;
 	}
 	
-	// Update is called once per frame
-	void Update ()
+
+
+    public void SwitchToDefault()
     {
-		
-	}
+        SwitchVideoClip(m_defaultClip);
+        Play();
+    }
+
+    public void SwitchVideoClip(UnityEngine.Video.VideoClip newClip)
+    {
+        Stop();
+        m_videoPlayer.clip = newClip;
+    }
 
 
+
+    public void Play()
+    {
+        m_videoPlayer.Play();
+    }
+
+    public void Pause()
+    {
+        m_videoPlayer.Pause();
+    }
+
+    public void Stop()
+    {
+        m_videoPlayer.Stop();
+    }
 }
