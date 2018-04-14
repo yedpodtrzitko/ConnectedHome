@@ -19,10 +19,10 @@ public class VideoSwapper : MonoBehaviour
 	
 
 
-    public void SwitchToDefault()
+    public void SwitchToDefault(bool play)
     {
         SwitchVideoClip(m_defaultClip);
-        Play();
+        if(play) Play();
     }
 
     public void SwitchVideoClip(UnityEngine.Video.VideoClip newClip)
