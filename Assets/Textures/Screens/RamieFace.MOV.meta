@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fe5f112481fa20244a753f8ea017704f
-timeCreated: 1523644030
+guid: c788cc0d91276cb4ca989e6afb619c64
+timeCreated: 1523660236
 licenseType: Pro
 VideoClipImporter:
   externalObjects: {}
@@ -19,12 +19,12 @@ VideoClipImporter:
   importAudio: 1
   targetSettings:
     0:
-      enableTranscoding: 0
+      enableTranscoding: 1
       codec: 0
       resizeFormat: 7
       aspectRatio: 0
-      customWidth: 1920
-      customHeight: 1080
+      customWidth: 720
+      customHeight: 1280
       bitrateMode: 2
       spatialQuality: 2
   userData: 
