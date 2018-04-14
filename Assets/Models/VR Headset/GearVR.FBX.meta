@@ -8,14 +8,16 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: 'Material #38'
+    2100002: Body
     2300000: //RootNode
     3300000: //RootNode
     4300000: GearVR
+    4300002: mesh_headset
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -48,10 +50,10 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
