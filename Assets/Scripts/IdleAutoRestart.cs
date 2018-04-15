@@ -21,6 +21,12 @@ public class IdleAutoRestart : MonoBehaviour
         if (Valve.VR.OpenVR.System.GetTrackedDeviceActivityLevel(0) == Valve.VR.EDeviceActivityLevel.k_EDeviceActivityLevel_UserInteraction ||
         Valve.VR.OpenVR.System.GetTrackedDeviceActivityLevel(0) == Valve.VR.EDeviceActivityLevel.k_EDeviceActivityLevel_Unknown)
         {
+            if (isInactive)
+            {
+                isInactive = false;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            }
+
             isInactive = false;
             cTime = 0;
         }
