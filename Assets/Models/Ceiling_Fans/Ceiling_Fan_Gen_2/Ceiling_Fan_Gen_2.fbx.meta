@@ -6,11 +6,22 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: mesh_fan_blades
+    100004: mesh_fan_body
     400000: //RootNode
+    400002: mesh_fan_blades
+    400004: mesh_fan_body
     2100000: fan
     2300000: //RootNode
+    2300002: mesh_fan_blades
+    2300004: mesh_fan_body
     3300000: //RootNode
+    3300002: mesh_fan_blades
+    3300004: mesh_fan_body
     4300000: mesh_fan
+    4300002: polySurface10
+    4300004: mesh_fan_blades
+    4300006: mesh_fan_body
   externalObjects: {}
   materials:
     importMaterials: 0
