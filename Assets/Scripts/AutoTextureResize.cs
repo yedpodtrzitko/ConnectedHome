@@ -26,8 +26,8 @@ public class AutoTextureResize : MonoBehaviour
         GetComponent<Renderer>().material = newMat;
 
         Vector3 adjustedScale = Vector3.zero;
-        adjustedScale.x = (float)newMat.mainTexture.width; 
-        adjustedScale.y = (float)newMat.mainTexture.height;
+        adjustedScale.x = newMat.mainTexture.width / newMat.mainTexture.height;
+        adjustedScale.y = 1f;
         adjustedScale.z = transform.localScale.z;
 
         adjustedScale.Normalize();
