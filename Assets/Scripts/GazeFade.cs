@@ -10,20 +10,32 @@ public class GazeFade : MonoBehaviour
     Renderer m_renderer;
     Transform m_mainCamera;
     Material[] m_mats;
-    
+    TMPro.TextMeshPro tmp;
+
 	void Start ()
     {
         SetMaterialsToInstances();
         m_mainCamera = Camera.main.transform;
+        tmp = GetComponent<TMPro.TextMeshPro>();
 	}
 	
 	void Update ()
     {
-        foreach(Material mat in m_mats)
+        if (tmp != null)
         {
-            Color color = mat.color;
+            Color color = tmp.color;
             color.a = 1 - (GetCameraAngle() / 180f) * FadeStrength;
-            mat.color = color;
+            tmp.color = color;
+        }
+
+        else
+        {
+            foreach (Material mat in m_mats)
+            {
+                Color color = mat.color;
+                color.a = 1 - (GetCameraAngle() / 180f) * FadeStrength;
+                mat.color = color;
+            }
         }
 	}
 

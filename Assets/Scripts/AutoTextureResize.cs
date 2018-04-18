@@ -6,7 +6,7 @@ public class AutoTextureResize : MonoBehaviour
 {
 
     public List<Texture> m_textures = new List<Texture>();
-    private static List<Texture> m_nonRepeatTextures;
+    private List<Texture> m_nonRepeatTextures;
 
 	void Start ()
     {
