@@ -10,7 +10,22 @@ ModelImporter:
     3300000: //RootNode
     4300000: potted plant 010
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: 137b17e9b6c77894dab0b9cada9f489f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _potted plant 010 hdefaultMat
+    second: {fileID: 2100000, guid: 2fb4a1368be2c994c9e0e0ec193e6cd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: potted plant 010
+    second: {fileID: 2100000, guid: 63e3fa57c2f7f8b42bd5c18e83d7c0a8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,7 +63,7 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
