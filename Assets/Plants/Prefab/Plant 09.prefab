@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 9500000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plant 09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -24,9 +24,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 1411.808, y: -232.75671, z: 945.77246}
-  m_LocalScale: {x: 1.145125, y: 1.145125, z: 1.145125}
+  m_LocalRotation: {x: 0.000000010192497, y: -0.88459826, z: 0.00000001933352, w: 0.46635386}
+  m_LocalPosition: {x: 1.052, y: 0, z: 4.921}
+  m_LocalScale: {x: 0.85000014, y: 0.85, z: 0.85000014}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
