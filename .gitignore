@@ -5,6 +5,8 @@
 /[Bb]uilds/
 /[Pp]roject[Ss]ettings/
 /Assets/AssetStoreTools*
+/Fiber360/
+/Assets/VRPanorama/
 
 # Visual Studio 2015 cache directory
 /.vs/
