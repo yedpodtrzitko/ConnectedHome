@@ -117,13 +117,10 @@ public class TargetIndicator : MonoBehaviour
     {
         Vector3 returnVector = vector;
 
-        float max = 0;
-
-        max = vector.x > max ? vector.x : max;
-        max = vector.y > max ? vector.y : max;
-        max = vector.z > max ? vector.z : max;
-
-        returnVector /= max;
+        float max = Mathf.Max(vector.x, vector.y, 0f);
+        if (max != 0f) {
+            returnVector /= max;
+        }
 
         return returnVector;
     }
